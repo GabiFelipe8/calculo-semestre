@@ -1,0 +1,36 @@
+import javax.swing.JOptionPane;
+class Main {
+  public static void main(String[] args) {
+
+    String nome = JOptionPane.showInputDialog("Usuário, por favor informe o seu nome: "); 
+
+    int resposta = JOptionPane.showConfirmDialog(null, "Olá, " + nome + ". Bem vindo ao cálculo de semestre, deseja saber a nota do seu semestre? ", "CALCULO_SEMESTRE", JOptionPane.YES_NO_OPTION);
+
+     if (resposta == JOptionPane.YES_OPTION) {
+      //YES OPTION
+        JOptionPane.showMessageDialog(null, "Ok, calcularemos a sua nota!", "CALCULO_SEMESTRE", JOptionPane.WARNING_MESSAGE);
+      
+      } else {
+      // no option
+         return;
+         
+       }
+    
+    double numero1 = Double.parseDouble(JOptionPane.showInputDialog("Informe a primeira nota: "));
+    double numero2 = Double.parseDouble(JOptionPane.showInputDialog("informe a segunda nota: "));
+    double numero3 = Double.parseDouble(JOptionPane.showInputDialog("Informe a terceira nota: "));
+    
+  double resposta2 = (numero1 + numero2 + numero3)/3;
+
+    JOptionPane.showMessageDialog(null, "O valor do semestre é: "+ resposta2);
+
+     if (resposta2 >= 8) {
+
+      JOptionPane.showMessageDialog(null, "Parabéns " + nome + ", você passou de semestre!");
+    } else {
+
+      JOptionPane.showMessageDialog(null, "Sinto informar " + nome + ", mas você reprovou no semestre...");
+    }
+ 
+  }
+}
